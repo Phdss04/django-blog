@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    {%include 'parcials/_head.html'%}
+    <title>{%block 'title'%} {% endblock %}</title>
+</head>
+
+<body>
+
+{%include 'parcials/_nav.html'%}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            {%block 'content'%} {%endblock%}
+        </div>
+    </div>
+</div>
+
+{%include 'parcials/_footer.html'%}
+
+</body>
+
+</html>
