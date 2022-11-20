@@ -56,16 +56,17 @@
                 <h2 class="my-3">Deixe um comentário</h2>
                 <form method="POST" >
                     {% csrf_token %}
-                    <table class="table">
-                    {{form}}
-                        <tr>
-                            <td colspan="2">
-                                {%include 'parcials/_messages.html'%}
-                                <input id="envia_comentario" type="submit" class="btn btn-primary"
-                                    value="Enviar">
-                            </td>
-                        </tr>
-                    </table>
+
+                    {%for visible_field in form.visible_fields %}
+                    <p>
+                        {{visible_field.label_tag}} 
+                        <br>
+                        {{visible_field}}
+                    </p>
+                    {%endfor%}
+                    
+                    <input id="envia_comentario" type="submit" class="btn btn-primary"
+                    value="Enviar">
                 </form>
             </div>
         <div class="col-xl"></div>
